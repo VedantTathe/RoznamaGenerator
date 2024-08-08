@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        nav {
+            background-color: #ff8730;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid container">
+            <a class="navbar-brand" style="font-weight: 700;" href="{%url 'index'}">RoznamaGen</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                <div class="navbar-nav me-5">
+                    <a class="nav-link " aria-current="page" href="{%url 'fetch_and_download_pdf'%}">Download PDF</a>
+                    <a class="nav-link" href="{%url 'change_caseinfo_excelfile'%}">Change Excel</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    {%if msg%}
+    <div class="alert alert-success alert-dismissible fade show m-0" role="alert">
+        Success: {{msg}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {%elif err%}
+    <div class="alert alert-danger alert-dismissible fade show m-0" role="alert">
+        Error: {{err}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    {%endif%}
+
+    <div style="background-color: #fff0e6;">
+        <div class="container ">
+            <h1 class="text-center text-uppercase">Welcome to Home Page </h1>
+
+            <div class="container">
+                <h3>This is Roznama Generator Website</h3>
+                <p>After Clicking on Download Now Todays PDF will be downloaded and then from court case format excel
+                    file
+                    and
+                    todays excel file common applications will be selected and that common application related data will
+                    be
+                    filled in the roznama excel</p>
+                <p>Finally You can click on Download Roznama and your excel file will be downloaded</p>
+
+                <div class="row">
+
+                    <div class="col-md-5 my-2 m-md-4 text-center text-uppercase p-4 rounded-2"
+                        style="background-color: #ffb886;">
+                        <p>Click below button to download todays pdf (Wait for few seconds after clicking)</p>
+
+
+                        <button class="btn btn-primary "><a class="text-white text-decoration-none"
+                                href="{%url 'fetch_and_download_pdf'%}">Download Now</a></button>
+
+                    </div>
+
+                    <div class="col-md-5 my-2 m-md-4 text-center text-uppercase p-4 rounded-2"
+                        style="background-color: #ffb886;">
+
+                        <p>Click below button to update court case info format excel file</p>
+
+
+                        <button class="btn btn-warning "><a class="text-white text-decoration-none"
+                                href="{%url 'change_caseinfo_excelfile'%}">Change Excel File</a></button>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+    <p class="text-center w-100" style="background-color: #ff964b; font-weight: 600;">© Developed By Vedant Tathe</p>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
