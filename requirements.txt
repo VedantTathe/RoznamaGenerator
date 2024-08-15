@@ -1,0 +1,13 @@
+Django==4.2.15
+pandas==2.2.2
+sqlparse==0.5.1
+beautifulsoup4==4.9.3
+pymupdf
+numpy
+requests
+bs4
+fitz
+spacy
+frontend
+urllib3
+openpyxl

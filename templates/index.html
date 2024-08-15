@@ -11,6 +11,25 @@
         nav {
             background-color: #ff8730;
         }
+        .loader {
+        width: 28px;
+        height: 28px;
+        border: 5px solid #FFF;
+        border-bottom-color: #FF3D00;
+        border-radius: 50%;
+        display: inline-block;
+        box-sizing: border-box;
+        animation: rotation 1s linear infinite;
+        }
+
+        @keyframes rotation {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+        } 
     </style>
 </head>
 
@@ -56,8 +75,9 @@
                     and
                     todays excel file common applications will be selected and that common application related data will
                     be
-                    filled in the roznama excel</p>
-                <p>Finally You can click on Download Roznama and your excel file will be downloaded</p>
+                    filled in the roznama excel. <br>
+                    Finally You can click on Download Roznama and your excel file will be downloaded</p>
+                    <p>If todays pdf and court case format info applications numbers not matched appropriate message will be displayed</p>
 
                 <div class="row">
 
@@ -66,7 +86,7 @@
                         <p>Click below button to download todays pdf (Wait for few seconds after clicking)</p>
 
 
-                        <button class="btn btn-primary "><a class="text-white text-decoration-none"
+                        <button id="download-btn-outer" class="btn btn-primary "><a id="download-btn" class="text-white text-decoration-none"
                                 href="{%url 'fetch_and_download_pdf'%}">Download Now</a></button>
 
                     </div>
@@ -94,6 +114,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <script>
+        let btn = document.querySelector("#download-btn");
+
+        btn.addEventListener('click',()=>{
+            btn.innerHTML = '<span class="loader"></span>';
+            document.querySelector("#download-btn-outer").style.width = '145px';
+        });
+
+        
+    </script>
 </body>
 
 </html>
