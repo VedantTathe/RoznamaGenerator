@@ -7,8 +7,6 @@ from urllib.parse import urljoin
 import urllib3
 from mynewproject.settings import BASE_DIR
 import fitz  # PyMuPDF
-import pandas as pd
-import shutil
 import re
 import spacy
 import pandas as pd

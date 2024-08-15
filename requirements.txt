@@ -11,3 +11,4 @@ spacy
 frontend
 urllib3
 openpyxl
+tools
