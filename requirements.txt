@@ -6,7 +6,6 @@ pymupdf
 numpy
 requests
 bs4
-fitz
 spacy
 frontend
 urllib3

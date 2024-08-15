@@ -6,7 +6,7 @@ from django.http import HttpResponse
 from urllib.parse import urljoin
 import urllib3
 from mynewproject.settings import BASE_DIR
-import fitz  # PyMuPDF
+import pymupdf  # PyMuPDF
 import re
 import spacy
 import pandas as pd
@@ -35,7 +35,7 @@ def read_pdf_to_excel():
     pdf_filename = os.path.join(download_dir, 'todays-pdf.pdf')
 
     if os.path.exists(pdf_filename):
-        pdf_document = fitz.open(pdf_filename)
+        pdf_document = pymupdf.open(pdf_filename)
         text = []
 
         for page_num in range(len(pdf_document)):
