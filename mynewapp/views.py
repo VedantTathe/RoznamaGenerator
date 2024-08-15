@@ -656,7 +656,7 @@ def fetch_and_download_pdf(request):
             return render(request, 'pdf_downloaded.html', exdata)
     except Exception as e:
         print(e)
-        return render(request, 'pdf_downloaded.html', {'err': 'Opps..! Something Went Wrong, Error Occured..!'})
+        return render(request, 'pdf_downloaded.html', {'err': 'Opps..! Something Went Wrong, Error Occured..!','hidden_err':e})
     else:
         return render(request, 'pdf_downloaded.html', {'err': 'PDF Not Founded On Website, Something went wrong'})
 
