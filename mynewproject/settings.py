@@ -29,8 +29,8 @@ SECRET_KEY = 'django-insecure-41@y-!%-*97=m0rgl^n&8^1h3h5r=9ymfzd1j$#6jhw7ox%fmk
 DEBUG = True
 
 
-# ALLOWED_HOSTS = ['localhost','127.0.0.1', '.vercel.app','.now.sh']
 ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost','127.0.0.1', '.vercel.app','.now.sh']
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME: 
@@ -126,10 +126,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 
-# STATIC_URL = '/static/'
-# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'main/static')]
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
-# MY_ROOT = os.path.join(BASE_DIR,'main','static')
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'main/static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+MY_ROOT = os.path.join(BASE_DIR,'main','static')
 
 
 # Default primary key field type
