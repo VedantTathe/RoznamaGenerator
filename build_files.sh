@@ -25,9 +25,13 @@ python -m pip install --upgrade pip
 pip install -r requirements.txt
 
 
+python -m spacy download en_core_web_sm
+
 # Collect static files
 # python manage.py collectstatic --noinput --clear
 
 mkdir -p static
+
+
 
 echo "BUILD END"
