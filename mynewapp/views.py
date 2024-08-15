@@ -620,32 +620,32 @@ def return_roznama(request):
 @csrf_exempt
 def fetch_and_download_pdf(request):
     try:
-        # base_url = 'https://mat.maharashtra.gov.in/1081/Board-Display'  #base url provided to find pdfs url
-        # response = requests.get(base_url, verify=False)  # Disable SSL verification
-        # soup = BeautifulSoup(response.text, 'html.parser')
-        # anchor = soup.find(id='SitePH_DataList1_HyperLink3_0')
-        # if anchor and anchor['href']:
-        #     pdf_url = anchor['href']
-        #     full_pdf_url = urljoin(base_url, pdf_url)  # Join the base URL with the relative URL
+        base_url = 'https://mat.maharashtra.gov.in/1081/Board-Display'  #base url provided to find pdfs url
+        response = requests.get(base_url, verify=False)  # Disable SSL verification
+        soup = BeautifulSoup(response.text, 'html.parser')
+        anchor = soup.find(id='SitePH_DataList1_HyperLink3_0')
+        if anchor and anchor['href']:
+            pdf_url = anchor['href']
+            full_pdf_url = urljoin(base_url, pdf_url)  # Join the base URL with the relative URL
 
-        #     print(full_pdf_url)
+            print(full_pdf_url)
 
             
-        #     download_dir = os.path.join(BASE_DIR,'downloads')
-        #     if not download_dir:
-        #         os.makedirs(download_dir, exist_ok=True)
+            download_dir = os.path.join(BASE_DIR,'downloads')
+            if not download_dir:
+                os.makedirs(download_dir, exist_ok=True)
 
-        #     # Download the PDF
-        #     pdf_response = requests.get(full_pdf_url, verify=False)  # Disable SSL verification
-        #     pdf_filename = 'downloads/todays-pdf.pdf'
-        #     with open(pdf_filename, 'wb') as f:
-        #         f.write(pdf_response.content)
+            # Download the PDF
+            pdf_response = requests.get(full_pdf_url, verify=False)  # Disable SSL verification
+            pdf_filename = 'downloads/todays-pdf.pdf'
+            with open(pdf_filename, 'wb') as f:
+                f.write(pdf_response.content)
                 
 
-        #     print("done")
-        #     # Render the success page
+            print("done")
+            # Render the success page
 
-        #     read_pdf_to_excel()
+            read_pdf_to_excel()
             exdata = fill_roznama_excel()
             if exdata is None:
                 print("exdata was none")
